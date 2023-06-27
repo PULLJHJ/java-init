@@ -7,8 +7,8 @@ public class ArryTest {
 		String[] strNums = new String[10];
 		for(int i=0; i<=9; i++) {
 			System.out.println(i+ ",");
-			System.out.println(i+1);
-			strNums[i]= Integer.toString(i+1);
+			System.out.println(i*2);
+			strNums[i]= Integer.toString(i*2);
 		}
 		
 		for(int i=0; i<10; i++){
