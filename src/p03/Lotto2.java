@@ -20,6 +20,11 @@ public class Lotto2 {
 		int cnt =0;              
 		for(int i=0; i<strs.length; i++) {
 			for(int j=0; j<lotto.length; j++) {
+				if(lotto[j] == Integer.parseInt(strs[i])) {
+					cnt++;
+				}
+				
+					
 				}
 			}
 			System.out.println(cnt + "개 맞추셨습니다.");
