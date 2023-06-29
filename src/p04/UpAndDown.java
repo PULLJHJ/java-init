@@ -27,7 +27,7 @@ public class UpAndDown {
 			System.out.println("UP");
 		}if(rNum < num) {
 			System.out.println("Down");
-
+			
 		}
 	}
 	}
