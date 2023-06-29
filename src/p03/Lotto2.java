@@ -18,10 +18,9 @@ public class Lotto2 {
 		String num = sc.nextLine();	 
 		String[] strs = num.split(",");
 		int cnt =0;              
-		for(int i=0; i<strs.length; i++) {
-			int strNum = Integer.parseInt(strs[i]);
+		for(int i=0; i<strs.length; i++) {			
 			for(int j=0; j<lotto.length; j++) {
-				if(lotto[j] == strNum) {
+				if(lotto[i] == Integer.parseInt(strs[i])){
 					cnt++;
 				}
 				
