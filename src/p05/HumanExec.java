@@ -24,7 +24,6 @@ public class HumanExec {
 		h[4].name = "엄북동";
 		h[4].money = 9000;
 		
-		
 		int sum = 0;
 		for(int i=0; i<h.length; i++) {
 			sum += h[i].money;
