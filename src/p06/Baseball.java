@@ -9,7 +9,7 @@ public class Baseball {
 		Random r = new Random();
 		int[] nums = new int[3];     
 		for(int i=0; i<nums.length; i++) {
-			int rNum = r.nextInt(10);
+			int rNum = r.nextInt(9) + 1;
 			for(int j=0; j<i; j++) {
 				if(nums[j] == rNum) {
 					i--;
@@ -29,18 +29,17 @@ public class Baseball {
 		System.out.println("1~9까지 숫자를 ,기준으로 입력해주세요");
 		String numStr = scan.nextLine();
 		String[] numStrs = numStr.split(",");
-		int[] compNums = new int[numStrs.length];
+		int[] compNums = new int[numStrs.length]; ////compNums는 입력받은 수 , nums[i]는 랜덤으로 생성 된 수
 		for(int i=0; i<numStrs.length; i++) {
 			compNums[i] = Integer.parseInt(numStrs[i]);
 			for(int j=0; j<compNums.length; j++) {
-				if(compNums[i] == nums[j]) {
-					strike ++;
-					System.out.println("해당공은" + strike);
-				}if(compNums[i] != nums[j]) {
+				if(compNums[j] == nums[i] && j==i) {
+					strike++;
+				}if(compNums[i] == nums[j]) {
 					ball++;
-					System.out.println(ball);
 				}
 				}
+				}
+		System.out.println(strike + "strike" +ball + "ball");
 			}
-		}
-		}
+	}
