@@ -20,7 +20,7 @@ public class Overriding2 {
 			Mother m = ms[i];
 			if(m instanceof Daughter) {       //m이 Daughter 로 불릴 수 있다면 딸이 개발을 합니다
 				Daughter d = (Daughter)m;
-				d.work("개발");			
+				d.work();			
 			}
 		}
 	}

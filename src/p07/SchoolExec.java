@@ -9,8 +9,10 @@ public class SchoolExec {
 		
 		School middleSchool = new MiddleSchool();
 		middleSchool.name = "양주";
+		middleSchool.address ="경기도 양주시 삼숭로";
 		School highSchool = new HighSchool();
 		highSchool.name = "양주";
+		middleSchool.address = "경기도 양주시 고읍동";
 		School school = new School();
 		school.name = "학교";
 		
@@ -21,6 +23,7 @@ public class SchoolExec {
 		
 		for(int i=0; i<schools.length; i++) {
 			System.out.print(schools[i].name);
+			System.out.println(schools[i].address);
 			if(schools[i] instanceof MiddleSchool) {
 				MiddleSchool ms = (MiddleSchool)schools[i];
 				ms.studentType = "중학교";
