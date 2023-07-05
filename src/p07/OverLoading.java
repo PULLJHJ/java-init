@@ -1,6 +1,6 @@
 package p07;     //
 
-public class OverLoading {    // overloading 전제 조건 같은 영역에 있어야 함. 메서드명 같아야 함. 파라미터 개수가 달라야 함.
+public class OverLoading {    // overloading 전제 조건 같은 영역에 있어야 함. 메서드명 같아야 함. 파라미터 개수가 달라야 함. 매개변수의 갯수가 같아도 데이터 타입이 달라야 한다.
 	
 	public static void test() {
 		System.out.println("test() 호출");
