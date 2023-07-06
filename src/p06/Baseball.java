@@ -32,17 +32,17 @@ public class Baseball {
 
 		int[] compNums = new int[numStrs.length]; ////compNums는 입력받은 수 , nums[i]는 랜덤으로 생성 된 수
 
-		int[] compNums = new int[numStrs.length]; //compNums는 입력받은 수 , nums[i]는 랜덤으로 생성 된 수
+		int[] compNums1 = new int[numStrs.length]; //compNums는 입력받은 수 , nums[i]는 랜덤으로 생성 된 수
 
 		for(int i=0; i<numStrs.length; i++) {
-			compNums[i] = Integer.parseInt(numStrs[i]);
-			for(int j=0; j<compNums.length; j++) {
-				if(compNums[j] == nums[i] && j==i) {
+			compNums1[i] = Integer.parseInt(numStrs[i]);
+			for(int j=0; j<compNums1.length; j++) {
+				if(compNums1[j] == nums[i] && j==i) {
 					strike++;
 
-				}if(compNums[i] == nums[j]) {
+				}if(compNums1[i] == nums[j]) {
 
-				}else if (compNums[i] == nums[j]) {
+				}else if (compNums1[i] == nums[j]) {
 
 					ball++;
 				}
