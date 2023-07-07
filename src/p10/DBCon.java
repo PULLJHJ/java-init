@@ -5,26 +5,28 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBCon {
-	//전화기가 필요함,
-	//유심칩 
-	//전화번호
-	//인증절차
-	//
 	
-	public static void main(String[] args) {
+	private static final String DRIVER_CALSS = "org.mariadb.jdbc.Driver";
+	private static final String URL = "jdbc:mariadb://localhost:3306/kd";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "kd1824java";
+	
+	static {
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
+			Class.forName(DRIVER_CALSS);
+			System.out.println("내가 나오면 드라이버 잘 찾은거임!");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-}
-/*		Connection con;
+	public static Connection getCon() {
 		try {
-			con = DriverManager.getConnection(null);
-		} catch (Exception e) {
-			e.printStackTrace();
+			Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			return con;
+		} catch (SQLException e) {
+			e.printStackTrace(); 
 		}
+		return null;	
 	}
+	
 }
-*/
