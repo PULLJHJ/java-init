@@ -46,7 +46,7 @@ public class MapTest3 {
 	maplist.add(m3);
 	maplist.add(m4);
 	
-	for(int i=0; i<maplist.size(); i++) {    // mpalist의 사이즈 만큼 반복
+	for(int i=0; i<maplist.size(); i++) {    
 		Map<String,String> map = maplist.get(i); 
 		Iterator<String> it = map.keySet().iterator(); // 
 		while(it.hasNext()) {   // 다음 순서에 비교할게 있으면 넘어감.
