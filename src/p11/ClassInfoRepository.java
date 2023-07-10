@@ -49,5 +49,17 @@ public class ClassInfoRepository {
 		}
 		return 0;
 	}
+	
+	public int deleteClassInfo (Map<String,String> classInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM CLASS_INFO WHERE CI_NUM=" + classInfo.get("ciNum");
+			return stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
 
 }

@@ -14,4 +14,9 @@ public class ClassInfoService {
 		ClassInfoRepository ciRepo = new ClassInfoRepository();
 		return ciRepo.insertClassInfo(classInfo);
 	}
+	
+	public int deleteClassInfo (Map<String,String> classInfo) {
+		ClassInfoRepository ciRepo = new ClassInfoRepository();
+		return ciRepo.deleteClassInfo(classInfo);
+	}
 }
