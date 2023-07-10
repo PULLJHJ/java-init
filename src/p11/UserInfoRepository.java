@@ -20,14 +20,16 @@ public class UserInfoRepository {
 	 * 아이디,비밀번호
 	 */
 	
-	public List<Map<String,String>> getUserInfoList(String uiName){
+	public List<Map<String,String>> getUserInfoList(Map<String,String> param){
 		List<Map<String,String>> userInfoList = new ArrayList<>();
 		Connection con = DBCon.getCon();
 		try {
 			Statement stmt = con.createStatement();
 			String sql = "SELECT * FROM user_info";
-			if(uiName != null) {
-				sql += " WHERE UI_NAME LIKE '%" + uiName + "%'";
+			if(param != null) {
+				if(param.get("uiName") != null) {
+					sql += " WHERE UI_NAME LIKE '%" + param.get("uiName") + "%'";
+				}	
 			}
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
@@ -42,6 +44,31 @@ public class UserInfoRepository {
 			e.printStackTrace();
 		}
 		return userInfoList;
+	}
+	
+	public int insertUserInfo (Map<String,String> userInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "INSERT INTO USER_INFO(UI_ID, UI_PWD,UI_NAME)";
+					sql+= " values ('" + userInfo.get("uiId") + "','" + userInfo.get("uiPwd") + "',";
+					sql+= " '" + userInfo.get("uiName") + "')";
+					return stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	public int deleteUserInfo (Map<String,String> userInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM USER_INFO WHERE UI_NUM=" + userInfo.get("uiNum");
+			return stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 }
